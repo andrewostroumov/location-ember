@@ -13,6 +13,11 @@ export default Service.extend({
     });
   },
 
+  logout() {
+    this.removeToken();
+    this.set('user', null);
+  },
+
   requestUser() {
     return this.adapter().requestUser().then((data) => {
       this.get('store').pushPayload(data);
@@ -34,5 +39,10 @@ export default Service.extend({
   loadToken() {
     let token = localStorage.getItem(tokenKey);
     this.set('token', token);
+  },
+
+  removeToken() {
+    localStorage.removeItem(tokenKey);
+    this.set('token', null);
   }
 });
