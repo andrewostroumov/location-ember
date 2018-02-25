@@ -8,6 +8,7 @@ function injectSession(appInstance) {
   [
     'adapter',
     'controller',
+    'component',
     'route',
   ].forEach((type) => {
     appInstance.inject(type, 'session', 'service:session');
