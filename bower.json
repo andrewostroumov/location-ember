@@ -1,0 +1,6 @@
+{
+  "name": "location-ember",
+  "dependencies": {
+    "pickadate": "^3.5.6"
+  }
+}

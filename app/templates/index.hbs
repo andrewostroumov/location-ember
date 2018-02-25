@@ -1,0 +1,12 @@
+{{#power-select
+  placeholder="Select device"
+  options=model
+  selected=device
+  searchEnabled=false
+  onchange=(action (mut device))
+as |device| }}
+  {{device.name}}
+{{/power-select}}
+{{pick-a-date options=dateOptions class="" date=(readonly date) on-selected=(action (mut date)) placeholder="Select date"}}
+
+{{location-map locations=locations}}
