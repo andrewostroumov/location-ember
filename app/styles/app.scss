@@ -1,0 +1,11 @@
+@import 'ember-power-select/themes/bootstrap';
+@import 'ember-power-select';
+
+.locations-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.g-map-canvas {
+  height: 100vh;
+}

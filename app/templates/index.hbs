@@ -1,12 +1,25 @@
-{{#power-select
-  placeholder="Select device"
-  options=model
-  selected=device
-  searchEnabled=false
-  onchange=(action (mut device))
-as |device| }}
-  {{device.name}}
-{{/power-select}}
-{{pick-a-date options=dateOptions class="" date=(readonly date) on-selected=(action (mut date)) placeholder="Select date"}}
+<div class="locations-form">
+  <div class="row">
+    <div class="col-2">
+      <h4>Locations for:</h4>
+    </div>
+    <div class="col-3">
+      {{#power-select
+        placeholder="Select device"
+        options=model
+        selected=device
+        searchEnabled=false
+        onchange=(action (mut device))
+      as |device| }}
+        {{device.name}}
+      {{/power-select}}
+    </div>
+    <div class="col-2">
+      {{pick-a-date options=dateOptions class="form-control" date=(readonly date) on-selected=(action (mut date)) placeholder="Select date"}}
+    </div>
+  </div>
+</div>
+
+<hr>
 
 {{location-map locations=locations}}
